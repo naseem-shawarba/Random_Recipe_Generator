@@ -1,7 +1,7 @@
 <template>
   <div class="mx-2">
     <div>
-      <RandomRecipeForm />
+      <RandomRecipeForm class="mb-4"/>
     </div>
 
     <div class="d-flex justify-center" v-if="isLoading">
