@@ -17,8 +17,8 @@
           label="Category"
         ></v-select>
       </v-col>
-      <v-col class="d-flex mt-3" cols="12" xl="2" lg="2" md="2" sm="2" xs="12">
-        <v-btn @click="generate">Generate</v-btn>
+      <v-col class="d-flex mt-3" cols="12" xl="2" lg="2" md="2" sm="12" xs="12">
+        <v-btn @click="generate" block>Generate</v-btn>
       </v-col>
     </v-row>
   </div>
