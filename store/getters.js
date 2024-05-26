@@ -1,26 +1,12 @@
 export default {
-  hasError({error}) {
-    return !!error
-  },
-  errorMessage({error}) {
-    return error
-  },
-  isLoading({loading}) {
-    return loading
-  },
-  recipeImageURL(state) {
-    return state.recipe.strMealThumb;
-  },
-  recipeName(state) {
-    return state.recipe.strMeal;
-  },
-  recipeCategory(state) {
-    return state.recipe.strCategory;
-  },
-  recipeOrigin(state) {
-    return state.recipe.strArea;
-  },
-  recipeIngredientsAndMeasures(state) {
+  hasError: (state) => !!state.error,
+  errorMessage: (state) => state.error,
+  isLoading: (state) => state.loading,
+  recipeImageURL: (state) => state.recipe.strMealThumb,
+  recipeName: (state) => state.recipe.strMeal,
+  recipeCategory: (state) => state.recipe.strCategory,
+  recipeOrigin: (state) => state.recipe.strArea,
+  recipeIngredientsAndMeasures: (state) => {
     // strMeasure1 strIngredient1
     const ingredientsAndMeasures = [];
     for (let i = 1; i <= 20; i++) {
@@ -33,23 +19,14 @@ export default {
     }
     return ingredientsAndMeasures;
   },
-  recipeInstructions(state) {
-    return state.recipe.strInstructions;
-  },
-  recipeOrigins({origins}) {
-    return origins;
-  },
-  recipeCategories(state) {
-    return state.categories.filter(
-      (category) => category !== "Pork"
-    );
-  },
+  recipeInstructions: (state) => state.recipe.strInstructions,
+  recipeOrigins: (state) => state.origins,
+  recipeCategories: (state) =>
+    state.categories.filter((category) => category !== "Pork"),
 
-  recipeCookingVideoURL(state) {
-    return state.recipe.strYoutube;
-  },
+  recipeCookingVideoURL: (state) => state.recipe.strYoutube,
 
-  recipeCookingVideoURLForIframe(state, getters) {
+  recipeCookingVideoURLForIframe: (state, getters) => {
     const youtubeEmbedTemplate = "https://www.youtube.com/embed/";
     const recipeCookingVideoURL = getters.recipeCookingVideoURL;
 
